@@ -30,7 +30,7 @@
 	          <a class="nav-link active" aria-current="page" href="jsp/home.jsp">Home</a>
 	        </li>
 	        <li class="nav-item">
-	          <a class="nav-link" href="#">Login</a>
+	          <a class="nav-link" href="jsp/LoginView.jsp">Login</a>
 	        </li>
 	        <li class="nav-item">
 	          <a class="nav-link" href="jsp/UserView.jsp">Registration</a>
