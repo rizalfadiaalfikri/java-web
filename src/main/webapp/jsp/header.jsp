@@ -31,10 +31,10 @@
 	          <a class="nav-link active" aria-current="page" href="<%= JWAView.Home %>">Home</a>
 	        </li>
 	        <li class="nav-item">
-	          <a class="nav-link" href="<%= JWAView.LoginView %>">Login</a>
+	          <a class="nav-link" href="<%= JWAView.LoginCTL %>">Login</a>
 	        </li>
 	        <li class="nav-item">
-	          <a class="nav-link" href="<%= JWAView.UserView %>">Registration</a>
+	          <a class="nav-link" href="<%= JWAView.UserCTL %>">Registration</a>
 	        </li>
 	        <li class="nav-item">
 	          <a class="nav-link disabled">Content-us</a>

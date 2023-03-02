@@ -4,4 +4,34 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>LoginCTL</servlet-name>
+  	<display-name>LoginCTL</display-name>
+  	<description></description>
+  	<servlet-class>javawebapplication.controller.LoginCTL</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>UserCTL</servlet-name>
+  	<display-name>UserCTL</display-name>
+  	<description></description>
+  	<servlet-class>javawebapplication.controller.UserCTL</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Home</servlet-name>
+  	<display-name>Home</display-name>
+  	<description></description>
+  	<servlet-class>javawebapplication.controller.Home</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>LoginCTL</servlet-name>
+  	<url-pattern>/LoginCTL</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UserCTL</servlet-name>
+  	<url-pattern>/UserCTL</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Home</servlet-name>
+  	<url-pattern>/Home</url-pattern>
+  </servlet-mapping>
 </web-app>
