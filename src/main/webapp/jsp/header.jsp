@@ -33,7 +33,7 @@
 	          <a class="nav-link" href="#">Login</a>
 	        </li>
 	        <li class="nav-item">
-	          <a class="nav-link" href="#">Registration</a>
+	          <a class="nav-link" href="jsp/UserView.jsp">Registration</a>
 	        </li>
 	        <li class="nav-item">
 	          <a class="nav-link disabled">Content-us</a>
