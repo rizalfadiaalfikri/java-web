@@ -1,6 +1,5 @@
-<%@ include file="jsp/header.jsp" %>
 <body>
-
+<%@ include file="jsp/header.jsp" %>
 <div id="carouselExampleFade" class="carousel slide carousel-fade">
   <div class="carousel-inner">
     <div class="carousel-item active">

@@ -1,3 +1,4 @@
+<%@page import="javawebapplication.controller.JWAView"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!doctype html>
@@ -27,13 +28,13 @@
 	    <div class="collapse navbar-collapse" id="navbarNav">
 	      <ul class="navbar-nav">
 	        <li class="nav-item">
-	          <a class="nav-link active" aria-current="page" href="jsp/home.jsp">Home</a>
+	          <a class="nav-link active" aria-current="page" href="<%= JWAView.Home %>">Home</a>
 	        </li>
 	        <li class="nav-item">
-	          <a class="nav-link" href="jsp/LoginView.jsp">Login</a>
+	          <a class="nav-link" href="<%= JWAView.LoginView %>">Login</a>
 	        </li>
 	        <li class="nav-item">
-	          <a class="nav-link" href="jsp/UserView.jsp">Registration</a>
+	          <a class="nav-link" href="<%= JWAView.UserView %>">Registration</a>
 	        </li>
 	        <li class="nav-item">
 	          <a class="nav-link disabled">Content-us</a>
