@@ -12,8 +12,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.rtl.min.css" integrity="sha384-WJUUqfoMmnfkBLne5uxXj+na/c7sesSJ32gI7GfCk4zO4GthUKhSEGyvQ839BC51" crossorigin="anonymous">
 	
 	<!-- Custom Css -->
-	<link rel="stylesheet" href="../css/style.css">
+	<link href="style.css" rel="stylesheet" type="text/css"/>
     <title>Home</title>
+    <style>
+	     <%@ include file="../css/style.css"%>
+	</style>
   </head>
   <body>
   

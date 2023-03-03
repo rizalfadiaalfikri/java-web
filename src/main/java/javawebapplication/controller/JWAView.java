@@ -4,7 +4,7 @@ public interface JWAView {
 	public String APP_CONTEXT = "/JavaWebApplication";
 	public String PAGE_FOLDER = "/jsp";
 	
-	public String HomeView = PAGE_FOLDER + "/home.jsp";
+	public String HomeView = PAGE_FOLDER + "/Home.jsp";
 	public String Home = APP_CONTEXT + "/Home";
 	
 	public String LoginView = PAGE_FOLDER + "/LoginView.jsp";

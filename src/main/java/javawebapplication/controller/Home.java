@@ -32,9 +32,9 @@ public class Home extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-//		RequestDispatcher requestDispatcher = request.getRequestDispatcher(JWAView.HomeView);
-//		requestDispatcher.forward(request, response);
-		ServletUtility.forward(JWAView.UserView, request, response);
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher(JWAView.HomeView);
+		requestDispatcher.forward(request, response);
+//		ServletUtility.forward(JWAView.HomeView, request, response);
 	}
 
 	/**
