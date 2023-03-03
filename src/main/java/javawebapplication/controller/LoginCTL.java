@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import javawebapplication.utility.ServletUtility;
+
 /**
  * Servlet implementation class LoginCTL
  */
@@ -29,8 +31,10 @@ public class LoginCTL extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher(JWAView.LoginView);
-		requestDispatcher.forward(request, response);
+//		RequestDispatcher requestDispatcher = request.getRequestDispatcher(JWAView.LoginView);
+//		requestDispatcher.forward(request, response);
+		ServletUtility.setErrorMessage("Invalid Data", request);
+		ServletUtility.forward(JWAView.LoginView, request, response);
 	}
 
 	/**

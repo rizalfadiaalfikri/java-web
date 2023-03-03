@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import javawebapplication.utility.ServletUtility;
+
 /**
  * Servlet implementation class UserCTL
  */
@@ -30,8 +32,9 @@ public class UserCTL extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher(JWAView.UserView);
-		requestDispatcher.forward(request, response);
+//		RequestDispatcher requestDispatcher = request.getRequestDispatcher(JWAView.UserView);
+//		requestDispatcher.forward(request, response);
+		ServletUtility.forward(JWAView.UserView, request, response);
 	}
 
 	/**
