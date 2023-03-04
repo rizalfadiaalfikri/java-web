@@ -1,3 +1,4 @@
+<%@page import="javawebapplication.utility.ServletUtility"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -31,7 +32,11 @@
             
           </div>
           <div class="card-body">
-            <form action="" method="post">
+          
+          <h3><%=ServletUtility.getSuccessMessage(request)%></h3>
+          <h3><%=ServletUtility.getErrorMessage(request)%></h3>
+          
+            <form action="<%= JWAView.UserCTL %>" method="post">
               <div class="form-group row">
                 <label for="email_address" 
                   class="col-md-4 col-form-label text-md-right">First Name<font color="red"></font></label>

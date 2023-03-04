@@ -31,7 +31,7 @@ public class UserModel {
 		    int i = 0;
 		    try {
 		      Connection conn = JDBCDaraScource.getConnection();
-		      PreparedStatement stmt = conn.prepareStatement("insert into user values(?,?,?,?,?,?,?)");
+		      PreparedStatement stmt = conn.prepareStatement("insert into users values(?,?,?,?,?,?,?)");
 		      stmt.setLong(1, nextPk());
 		      stmt.setString(2 , user.getFirstName() );
 		      stmt.setString(3 , user.getLastName() );
