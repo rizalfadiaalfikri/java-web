@@ -28,6 +28,12 @@
   	<description></description>
   	<servlet-class>javawebapplication.controller.WelcomeCTL</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>UserViewListCTL</servlet-name>
+  	<display-name>UserViewListCTL</display-name>
+  	<description></description>
+  	<servlet-class>javawebapplication.controller.UserViewListCTL</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>LoginCTL</servlet-name>
   	<url-pattern>/LoginCTL</url-pattern>
@@ -43,5 +49,9 @@
   <servlet-mapping>
   	<servlet-name>WelcomeCTL</servlet-name>
   	<url-pattern>/WelcomeCTL</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UserViewListCTL</servlet-name>
+  	<url-pattern>/UserViewListCTL</url-pattern>
   </servlet-mapping>
 </web-app>

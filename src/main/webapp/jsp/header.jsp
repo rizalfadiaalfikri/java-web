@@ -57,6 +57,9 @@
 	          <a class="nav-link disabled">About-us</a>
 	        </li>
 	        <li class="nav-item">
+	          <a class="nav-link" href="<%= JWAView.UserViewListCTL %>">User List</a>
+	        </li>
+	        <li class="nav-item">
 	          <a class="nav-link" href=<%= JWAView.LoginCTL+"?operation=logout"%>>Logout</a>
 	        </li>
 	      </ul>
