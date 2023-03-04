@@ -3,15 +3,7 @@
 <%@page import="javawebapplication.utility.ServletUtility"%>
 <%@page import="java.util.List"%>
 <%@ include file="header.jsp"%>
-<% 
-	int index = 1;
-	List list= ServletUtility.getList(request);
-	Iterator iterator = list.iterator();
-	while(iterator.hasNext()) {
-		UserBEan user = (UserBEan) iterator.next();
-	
 
-%>
 <body>
 <table class="table table-striped">
   <thead>
@@ -23,10 +15,18 @@
       <th scope="col">Password</th>
       <th scope="col">MobileNo</th>
       <th scope="col">Date of Birth</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
-  
+  	<% 
+		int index = 1;
+		List list= ServletUtility.getList(request);
+		Iterator iterator = list.iterator();
+		while(iterator.hasNext()) {
+			UserBEan user = (UserBEan) iterator.next();
+	
+	%>
     <tr>
       <th scope="row"><%= user.getId() %></th>
       <td><%= user.getFirstName() %></td>
@@ -35,6 +35,7 @@
       <td><%= user.getPassword() %></td>
       <td><%= user.getMobileNo() %></td>
       <td><%= user.getDob() %></td>
+      <td><a href="UserCTL?id=<%= user.getId() %>">Edit</a></td>
     </tr>
 	<% } %>
   </tbody>

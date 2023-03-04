@@ -1,3 +1,4 @@
+<%@page import="javawebapplication.utility.DataUtility"%>
 <%@page import="javawebapplication.utility.ServletUtility"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -35,6 +36,7 @@
           
           <h3><%=ServletUtility.getSuccessMessage(request)%></h3>
           <h3><%=ServletUtility.getErrorMessage(request)%></h3>
+          <jsp:useBean id="bean" class="javawebapplication.bean.UserBEan" scope="request"></jsp:useBean>
           
             <form action="<%= JWAView.UserCTL %>" method="post">
               <div class="form-group row">
@@ -42,7 +44,7 @@
                   class="col-md-4 col-form-label text-md-right">First Name<font color="red"></font></label>
                 <div class="col-md-6">
                   <input type="text"   class="form-control" placeholder="Enter First Name"
-                    name="firstName" value="" >
+                    name="firstName" value="<%=DataUtility.getStringData(bean.getFirstName()) %>" >
                     <font  color="red"></font>
                 </div>
               </div>
@@ -52,7 +54,7 @@
                   class="col-md-4 col-form-label text-md-right">Last Name<font color="red"></font></label>
                 <div class="col-md-6">
                   <input type="text"   class="form-control" placeholder="Enter Last Name"
-                    name="lastName" value="" >
+                    name="lastName" value="<%=DataUtility.getStringData(bean.getLastName()) %>" >
                     <font  color="red"></font>
                 </div>
               </div>
@@ -61,7 +63,7 @@
                   class="col-md-4 col-form-label text-md-right">Login Id<font color="red"></font></label>
                 <div class="col-md-6">
                   <input type="text" id="email_address"  class="form-control" placeholder="Enter Login Id"
-                    name="login" value="" >
+                    name="login" value="<%=DataUtility.getStringData(bean.getLogin()) %>" >
                     <font  color="red"></font>
                 </div>
               </div>
@@ -72,7 +74,7 @@
                   class="col-md-4 col-form-label text-md-right">Password<font color="red"></font></label>
                 <div class="col-md-6">
                   <input type="password" id="email_address"  class="form-control" placeholder="Enter password"
-                    name="password" value="" >
+                    name="password" value="<%=DataUtility.getStringData(bean.getPassword()) %>" >
                     <font  color="red"></font>
                 </div>
               </div>
@@ -82,7 +84,7 @@
                   class="col-md-4 col-form-label text-md-right">Date Of Birth<font color="red"></font></label>
                 <div class="col-md-6">
                   <input type="text"  id="datepicker" class="form-control" placeholder="Enter Date Of Birth"
-                    name="dob" value="" >
+                    name="dob" value="<%=DataUtility.getStringData(bean.getDob()) %>" >
                     <font  color="red"></font>
                 </div>
               </div>
@@ -94,7 +96,7 @@
                   class="col-md-4 col-form-label text-md-right">Mobile No.<font color="red"></font></label>
                 <div class="col-md-6">
                   <input type="text" id="email_address"  class="form-control" placeholder="Enter Mobile No"
-                    name="mobile" value="" >
+                    name="mobile" value="<%=DataUtility.getStringData(bean.getMobileNo()) %>" >
                     <font  color="red"></font>
                 </div>
               </div>

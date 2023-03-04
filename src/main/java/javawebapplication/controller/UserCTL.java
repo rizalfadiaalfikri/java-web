@@ -37,6 +37,14 @@ public class UserCTL extends HttpServlet {
 		// TODO Auto-generated method stub
 //		RequestDispatcher requestDispatcher = request.getRequestDispatcher(JWAView.UserView);
 //		requestDispatcher.forward(request, response);
+		//Edit....
+		  UserModel model = new UserModel();
+		  long id = DataUtility.getLong(request.getParameter("id"));
+		  if(id>0) {
+		    UserBEan bean = null;
+		    bean = model.FindByPk(id);
+		    request.setAttribute("bean", bean);
+		  }
 		ServletUtility.forward(JWAView.UserView, request, response);
 	}
 
