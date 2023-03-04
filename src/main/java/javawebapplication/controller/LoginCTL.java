@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import javawebapplication.Model.UserModel;
 import javawebapplication.bean.UserBEan;
@@ -47,9 +48,12 @@ public class LoginCTL extends HttpServlet {
 		UserBEan user = new UserBEan();
 	       String login=request.getParameter("login");
 	       String pwd=request.getParameter("password");
+	       HttpSession session=request.getSession(true);
 	       
 	       user = UserModel.UserLogin(login,pwd);
 	       if(user != null) {
+ 	    	   //Set attribute for session
+	    	   session.setAttribute("user", user.getFirstName());
 	           //ServletUtility.setSuccessMessage(request.getParameter("login")+ " is login successfully", request);
 	           ServletUtility.forward(JWAView.WelcomeView, request, response);
 	       }else {
