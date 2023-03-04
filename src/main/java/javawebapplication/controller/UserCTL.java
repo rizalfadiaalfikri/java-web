@@ -61,13 +61,26 @@ public class UserCTL extends HttpServlet {
 		    user.setDob(DataUtility.getDate(request.getParameter("dob")));
 		    user.setMobileNo(request.getParameter("mobile"));
 		    
-		    long i = UserModel.addUser(user);
-		    if(i>0) {
-		      ServletUtility.setSuccessMessage("User register sucessfully", request);
-		      
-		    }else {
-		      ServletUtility.setErrorMessage("Not insterted", request);
+		    user.setId(DataUtility.getLong(request.getParameter("id")));
+		    
+		    if(user.getId()>0) {
+		    	long i = UserModel.UpdateUser(user);
+	            if(i>0) {
+	              ServletUtility.setSuccessMessage("User Update sucessfully", request);
+	              
+	            }else {
+	              ServletUtility.setErrorMessage("Not insterted", request);
+	            }
+		    } else {
+		    	long i = UserModel.addUser(user);
+			    if(i>0) {
+			      ServletUtility.setSuccessMessage("User register sucessfully", request);
+			      
+			    }else {
+			      ServletUtility.setErrorMessage("Not insterted", request);
+			    }
 		    }
+		    
 		    request.getRequestDispatcher(JWAView.UserView).forward(request, response);
 		  }
 	

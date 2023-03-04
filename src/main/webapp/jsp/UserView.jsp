@@ -100,10 +100,15 @@
                     <font  color="red"></font>
                 </div>
               </div>
+              <% if(bean.getId()>0){ %>
+              <div class="col-md-6 offset-md-4">
+                <input type="submit" class="btn btn-primary" name="operation" value="Update">
+              </div>
+              <%} else{ %>
               <div class="col-md-6 offset-md-4">
                 <input type="submit" class="btn btn-primary" name="operation" value="Register">
-                
               </div>
+              <% } %>
             </form>
           </div>
         </div>

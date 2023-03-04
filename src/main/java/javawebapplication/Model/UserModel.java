@@ -15,7 +15,7 @@ public class UserModel {
 		    Connection conn;
 		    try {
 		      conn = JDBCDaraScource.getConnection();
-		      PreparedStatement stmt = conn.prepareStatement("select Max(id) from user");
+		      PreparedStatement stmt = conn.prepareStatement("select Max(id) from users");
 		      ResultSet rs = stmt.executeQuery();
 		      while(rs.next()){
 		        pk = rs.getLong(1);
@@ -137,5 +137,29 @@ public class UserModel {
 			    
 			    return user;
 			  }
+		  
+		  public static long UpdateUser(UserBEan user) {
+		      int i = 0;
+		      try {
+		        Connection conn = JDBCDaraScource.getConnection();
+		        PreparedStatement stmt = conn.prepareStatement("update users set fname=?, lname=?, login=?,password=?,dob=?,mobile=? where id=?");
+		        
+		        stmt.setString(1 , user.getFirstName() );
+		        stmt.setString(2 , user.getLastName() );
+		        stmt.setString(3 , user.getLogin() );
+		        stmt.setString(4 , user.getPassword() );
+		        stmt.setDate(5 , new java.sql.Date(user.getDob().getTime()) );
+		        stmt.setString(6 , user.getMobileNo() );
+		        stmt.setLong(7, user.getId());
+		          i =   stmt.executeUpdate();
+		        
+		      } catch (Exception e) {
+		        // TODO Auto-generated catch block
+		        e.printStackTrace();
+		      }
+		      
+		      
+		      return i;
+		    }
 		  
 }
