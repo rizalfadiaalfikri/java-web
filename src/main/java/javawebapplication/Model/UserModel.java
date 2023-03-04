@@ -3,6 +3,8 @@ package javawebapplication.Model;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import javawebapplication.bean.UserBEan;
 import javawebapplication.utility.JDBCDaraScource;
@@ -79,4 +81,33 @@ public class UserModel {
 		    
 		    return user;
 		  }
+		  
+		  // User Model List
+		  public static List list() {
+			  ArrayList list=new ArrayList();
+			  Connection conn=null;
+			  try {
+			     conn=JDBCDaraScource.getConnection();
+			    PreparedStatement pstmt=conn.prepareStatement("Select * from users");
+			    ResultSet rs= pstmt.executeQuery();
+			    while (rs.next()) {
+			    UserBEan user=new UserBEan();
+			    user.setId(rs.getLong("id"));
+			    user.setFirstName(rs.getString("fname"));
+			    user.setLastName(rs.getString("lname"));
+			    user.setLogin(rs.getString("login"));
+			    user.setPassword(rs.getString("password"));
+			    user.setDob(rs.getDate("dob"));
+			    user.setMobileNo(rs.getString("mobile"));
+			    list.add(user);
+			    }
+			  } catch (Exception e) {
+			    // TODO Auto-generated catch block
+			    e.printStackTrace();
+			  }finally {
+			    JDBCDaraScource.closeConnection(conn);
+			  }
+			  return list;
+			}
+		  
 }

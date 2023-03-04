@@ -29,8 +29,8 @@
 	      <span class="navbar-toggler-icon"></span>
 	    </button>
 	    <div class="collapse navbar-collapse" id="navbarNav">
+	    <ul class="navbar-nav">
 	    <%if(userSession == null) {%>
-	      <ul class="navbar-nav">
 	        <li class="nav-item">
 	          <a class="nav-link active" aria-current="page" href="<%= JWAView.Home %>">Home</a>
 	        </li>
