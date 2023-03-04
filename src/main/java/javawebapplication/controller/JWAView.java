@@ -13,5 +13,8 @@ public interface JWAView {
 	public String UserView = PAGE_FOLDER + "/UserView.jsp";
 	public String UserCTL = APP_CONTEXT + "/UserCTL";
 	
+	public String WelcomeView = PAGE_FOLDER + "/Welcome.jsp";
+	public String WelcomeCTL = APP_CONTEXT + "/WelcomeCTL";
+	
 			
 }

@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import javawebapplication.Model.UserModel;
+import javawebapplication.bean.UserBEan;
 import javawebapplication.utility.ServletUtility;
 
 /**
@@ -42,7 +44,18 @@ public class LoginCTL extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		UserBEan user = new UserBEan();
+	       String login=request.getParameter("login");
+	       String pwd=request.getParameter("password");
+	       
+	       user = UserModel.UserLogin(login,pwd);
+	       if(user != null) {
+	           //ServletUtility.setSuccessMessage(request.getParameter("login")+ " is login successfully", request);
+	           ServletUtility.forward(JWAView.WelcomeView, request, response);
+	       }else {
+	           ServletUtility.setErrorMessage("Invalid User", request);
+	           ServletUtility.forward(JWAView.LoginView, request, response);
+	       }
 	}
 
 }

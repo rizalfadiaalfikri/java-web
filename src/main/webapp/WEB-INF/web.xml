@@ -22,6 +22,12 @@
   	<description></description>
   	<servlet-class>javawebapplication.controller.Home</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>WelcomeCTL</servlet-name>
+  	<display-name>WelcomeCTL</display-name>
+  	<description></description>
+  	<servlet-class>javawebapplication.controller.WelcomeCTL</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>LoginCTL</servlet-name>
   	<url-pattern>/LoginCTL</url-pattern>
@@ -33,5 +39,9 @@
   <servlet-mapping>
   	<servlet-name>Home</servlet-name>
   	<url-pattern>/Home</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>WelcomeCTL</servlet-name>
+  	<url-pattern>/WelcomeCTL</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -1,3 +1,4 @@
+<%@page import="javawebapplication.utility.ServletUtility"%>
 <body>
   <%@ include file="header.jsp"%>
   <main class="login-form">
@@ -9,10 +10,10 @@
             Login 
             <h6 style="color: green;"></h6>
           </div>
-
+			<h3 style="color: green;"><%=ServletUtility.getSuccessMessage(request)%></h3>
           <div class="card-body">
 
-            <form action="" method="post">
+            <form action="<%= JWAView.LoginCTL %>" method="post">
 
               <div class="form-group row">
                 <label for="email_address" 
