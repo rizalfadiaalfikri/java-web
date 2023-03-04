@@ -36,7 +36,17 @@ public class LoginCTL extends HttpServlet {
 		// TODO Auto-generated method stub
 //		RequestDispatcher requestDispatcher = request.getRequestDispatcher(JWAView.LoginView);
 //		requestDispatcher.forward(request, response);
-		ServletUtility.setErrorMessage("Invalid Data", request);
+		String op = request.getParameter("operation");
+		try {
+			if(op.equals("logout")) {
+				HttpSession session=request.getSession(false);
+				session.invalidate();
+				ServletUtility.setSuccessMessage("Logout Succesfull", request);
+			}
+		}catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e);
+		}
 		ServletUtility.forward(JWAView.LoginView, request, response);
 	}
 

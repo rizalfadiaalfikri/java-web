@@ -20,7 +20,7 @@
   </head>
   <body>
   
-  
+  <% String userSession = (String) session.getAttribute("user"); %>
   	<!-- Start Navbar -->
   	<nav class="navbar navbar-expand-lg bg-body-tertiary">
 	  <div class="container">
@@ -29,6 +29,7 @@
 	      <span class="navbar-toggler-icon"></span>
 	    </button>
 	    <div class="collapse navbar-collapse" id="navbarNav">
+	    <%if(userSession == null) {%>
 	      <ul class="navbar-nav">
 	        <li class="nav-item">
 	          <a class="nav-link active" aria-current="page" href="<%= JWAView.Home %>">Home</a>
@@ -45,10 +46,21 @@
 	        <li class="nav-item">
 	          <a class="nav-link disabled">About-us</a>
 	        </li>
+	        <%} else {%>
 	        <li class="nav-item">
-	          <a class="nav-link" href=<%= JWAView.LoginCTL+"operation=logout"%>>Logout</a>
+	          <a class="nav-link active" aria-current="page" href="<%= JWAView.Home %>">Home</a>
+	        </li>
+	         <li class="nav-item">
+	          <a class="nav-link disabled">Content-us</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link disabled">About-us</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link" href=<%= JWAView.LoginCTL+"?operation=logout"%>>Logout</a>
 	        </li>
 	      </ul>
+	      <%} %>
 	    </div>
 	  </div>
 	</nav>
